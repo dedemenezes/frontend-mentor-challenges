@@ -1,0 +1,70 @@
+:root {
+  --black-space: #0b0d17;
+  --blue-space: #D0D6F9;
+  --white-space: #FFFFFF;
+}
+
+body {
+  margin: 0;
+  font-family: 'Barlow Condensed', sans-serif;
+  color: var(--white-space);
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Bellefair', serif;
+}
+
+h1 {
+  margin: 16px 0;
+  font-weight: lighter;
+  font-size: 7rem;
+}
+
+p {
+  margin: 0;
+  font-size: 18px;
+}
+
+nav {
+  padding: 2rem;
+}
+
+nav > i {
+  font-size: 2rem;
+}
+.heading-5 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.475px;
+  color: var(--blue-space);
+}
+
+.text-white {
+  color: var(--white-space)
+}
+.inline-list > * a {
+  text-decoration: none;
+}
+
+.d-none {
+  display: none;
+}
+
+.bg-home {
+  background-image: url('/assets/home/background-home-mobile.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.flex-between-center {
+  display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.banner-content {
+  text-align: center;
+  margin: 2rem;
+
+}
