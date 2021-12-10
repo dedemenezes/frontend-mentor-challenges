@@ -5,3 +5,4 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 /space-tourism-website-main
+/space-tourism-solution/node_modules
