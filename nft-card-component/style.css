@@ -10,6 +10,7 @@
 body {
   font-family: 'Outfit', sans-serif;
   background-color: var(--main-bg-blue);
+  max-width: 1440px
 }
 
 p {
