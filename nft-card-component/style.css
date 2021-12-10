@@ -1,0 +1,113 @@
+:root {
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+  --main-bg-blue: hsl(217, 54%, 11%);
+  --card-bg-blue: hsl(216, 50%, 16%);
+  --border-blue: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--main-bg-blue);
+}
+
+p {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: var(--soft-blue);
+}
+
+.card {
+  margin: 2rem 1rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background-color: var(--card-bg-blue);
+}
+
+.card-img {
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.card-text {
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.text-white {
+  color: var(--white);
+}
+
+.card-header{
+  font-size: 1.5rem;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+.font-light {
+  font-weight: 300;
+}
+.text-opacity {
+  opacity: .7;
+}
+.infos {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-blue);
+}
+
+.eth-color {
+  color: var(--cyan);
+}
+
+.d-flex-aligned {
+  display: flex;
+  align-items: center;
+}
+
+.price-logo {
+	background-image: url(images/icon-ethereum.svg);
+}
+
+.img-svg {
+  background-size: contain;
+	background-position: center;
+	width: 15px;
+  height: 15px;
+	background-repeat: no-repeat;
+  margin-right: 0.5rem;
+}
+
+.img-clock {
+  background-image: url('images/icon-clock.svg');
+}
+
+.creator {
+  padding: 1rem 0 0 0;
+}
+.avatar {
+  width: 36px;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+#artist {
+  font-weight: 400;
+}
+
+@media (max-width: 375px) {
+  .card {
+    max-width: 375px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .card {
+    margin: 40px auto;
+    max-width: 375px;
+    box-shadow: 1px 1px 2px rgba(0,0,0,.1);
+  }
+}
