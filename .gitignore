@@ -4,5 +4,5 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
-/space-tourism-website-main
+/space-tourism-website-main/starter-code
 /space-tourism-solution/node_modules
