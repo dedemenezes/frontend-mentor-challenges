@@ -1,0 +1,22 @@
+.card__btn_confirm {
+  background-color: var(--bright-blue);
+  color: white;
+  padding: 0.65rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 15px 7px 0px rgb(0 0 0 / 7%);
+  font-weight: 700;
+  letter-spacing: 0.75px;
+}
+
+.card__btn_confirm:hover {
+  opacity: 0.75;
+  transition: .2s ease;
+}
+
+.card__btn_cancel {
+  font-weight: 700;
+}
+
+.card__btn_cancel:hover {
+  color: black;
+}

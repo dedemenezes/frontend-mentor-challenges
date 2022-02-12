@@ -1,0 +1,51 @@
+/* FONT */
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+/* CSS IMPORTS */
+@import url(./css/card.css);
+@import url(./css/card_plan.css);
+@import url(./css/button.css);
+@import url(./css/background.css);
+@import url(./css/container.css);
+@import url(./css/footer.css);
+
+/* GENERAL STYLING */
+
+:root {
+  --pale-blue: hsl(225, 100%, 94%);
+  --bright-blue: hsl(245, 75%, 52%);
+  --very-pale-blue: hsl(225, 100%, 98%);
+  --desa-urated-blue: hsl(224, 23%, 55%);
+  --dark-blue: hsl(223, 47%, 23%);
+}
+
+body {
+  font-family: 'Red Hat Display', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  background-color: var(--very-pale-blue);
+  margin: 0;
+  position: relative;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.25rem
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+}
+
+.font__seven_five {
+  font-size: .75rem;
+}
+
+.opacity__seven_five {
+    opacity: 0.75;
+}

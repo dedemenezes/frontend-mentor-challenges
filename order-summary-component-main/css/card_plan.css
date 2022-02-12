@@ -1,0 +1,36 @@
+.card__plan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: hsl(0deg 0% 97%);
+  padding: 0.875rem;
+  border-radius: 0.5rem;
+}
+
+.card__plan > img {
+  margin-right: 0.875rem;
+}
+
+.plan__details {
+  flex-grow: 1;
+  text-align: start;
+}
+
+.plan__details .plan__name {
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+}
+
+.plan__change {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: underline;
+  color: var(--bright-blue);
+  /* text-decoration: none; */
+}
+
+.plan__change:hover {
+  opacity: 0.75;
+  text-decoration: none;
+}

@@ -1,0 +1,42 @@
+.card {
+  background-color: white;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.card__image {
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.card__content {
+  padding: 1.75rem;
+  text-align: center;
+}
+
+.card__content > * {
+  margin-bottom: 1.5rem;
+}
+
+.card__content > .link__no_margin {
+  margin-bottom: 0;
+}
+
+.card__content .info_font {
+  font-size: 0.825rem;
+  color: rgb(70 70 70);
+  line-height: 21px;
+}
+
+@media(max-width: 1920px) {
+  .card {
+    max-width: 345px;
+  }
+}
+
+@media(max-width: 375px) {
+  .card {
+    max-width: 295px;
+  }
+}
