@@ -1,0 +1,88 @@
+:root {
+  --soft-red: hsl(10, 79%, 65%);
+  --cyan: hsl(186, 34%, 60%);
+  --dark-brown: hsl(25, 47%, 15%);
+  --medium-brown: hsl(28, 10%, 53%);
+  --cream: hsl(27, 66%, 92%);
+  --very-pale-orange: hsl(33, 100%, 98%);
+}
+
+body {
+  font-size: 1.125rem;
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--very-pale-orange);
+  max-width: 375px;
+  margin: 40px auto;
+}
+
+.balance {
+  background-color: var(--soft-red);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.balance h2 {
+  margin-top: 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: hsl(27, 66%, 92%);
+}
+
+.balance__content p {
+  margin: 0;
+  font-size: 1.75rem;
+}
+
+.card__struct {
+  padding: 1.125rem 1.5rem;
+  border-radius: 0.75rem;
+}
+
+.balance__icon {
+  display: flex;
+}
+
+.translate {
+  transform: translateX(50%);
+}
+
+.circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.circle--white {
+  border: 2px solid white;
+}
+
+.circle--brown {
+  background-color: var(--dark-brown);
+  border: 2px solid var(--dark-brown);
+}
+
+.graph__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  grid-gap: 1rem;
+}
+
+.graph__columns  {
+  /* height: 240px; */
+  align-items: end;
+}
+
+.graph__header {
+  color: var(--medium-brown);
+  margin-top: 0.75rem;
+}
+
+.graph__bar {
+  border-radius: .25rem;
+  height: 36px;
+  background-color: var(--soft-red);
+    /* background-color: var(--cyan); */
+}

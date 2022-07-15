@@ -5,9 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Expenses chart component</title>
 
+  <title>Frontend Mentor | Expenses chart component</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 11px; text-align: center; }
@@ -16,28 +20,83 @@
 </head>
 <body>
 
-  My balance
-  $921.48
+  <div class="balance card__struct">
+    <div class="balance__content">
+      <h2>My balance</h2>
+      <p><strong>$921.48</strong></p>
+    </div>
+    <div class="balance__icon">
+      <div class="circle circle--white translate"></div>
+      <div class="circle circle--brown"></div>
+    </div>
+  </div>
 
-  Spending - Last 7 days
+  <section>
+    <h1>Spending - Last 7 days</h1>
 
-  mon
-  tue
-  wed
-  thu
-  fri
-  sat
-  sun
+    <div class="graph">
+      <div class="graph__columns graph__grid">
+        <div class="mon graph__bar"></div>
+        <div class="tue graph__bar"></div>
+        <div class="wed graph__bar"></div>
+        <div class="thu graph__bar"></div>
+        <div class="fri graph__bar"></div>
+        <div class="sat graph__bar"></div>
+        <div class="sun graph__bar"></div>
+      </div>
+      <div class="graph__header graph__grid">
+        <div class="">mon</div>
+        <div class="">tue</div>
+        <div class="">wed</div>
+        <div class="">divu</div>
+        <div class="">fri</div>
+        <div class="">sat</div>
+        <div class="">sun</div>
+      </div>
+      <p></p>
+      <p></p>
+      <p></p>
+      <p></p>
+      <p></p>
+      <p></p>
+      <p></p>
+    </div>
 
-  Total this month
-  $478.33
+    <div class="total">
+      <p>Total this month</p>
+      <p><strong>$478.33</strong></p>
 
-  +2.4%
-  from last month
-  
+      <p><strong>+2.4%</strong></p>
+      <p>from last month</p>
+    </div>
+  </section>
+
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Your Name Here</a>.
   </div>
+  <script>
+    const addHeight = () => {
+
+    }
+    fetch("data.json")
+        .then(response => response.json())
+        .then((json) => {
+          console.log(json.sort(e => e.amount));
+
+          const higherDay = json.reduce((max, curren) => max.amount > curren.amount ? max : curren);
+
+          document.querySelector('.graph__columns').style.height = `${higherDay.amount * 3}px`
+          json.forEach((day) => {
+
+            bar = document.querySelector(`.${day.day}`)
+            bar.style.height = `${(100 * day.amount) / higherDay.amount}%`
+            if (day.amount >= 50) {
+              bar.style.backgroundColor = 'var(--cyan)'
+            }
+          })
+        });
+
+  </script>
 </body>
 </html>
