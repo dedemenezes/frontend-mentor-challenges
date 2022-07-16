@@ -31,18 +31,27 @@
     </div>
   </div>
 
-  <section>
+  <section class="card__struct graph__wrapper">
     <h1>Spending - Last 7 days</h1>
 
     <div class="graph">
+      <div class="amounts graph__grid">
+        <div class="graph__amount" id="amount_mon"></div>
+        <div class="graph__amount" id="amount_tue"></div>
+        <div class="graph__amount" id="amount_wed"></div>
+        <div class="graph__amount" id="amount_thu"></div>
+        <div class="graph__amount" id="amount_fri"></div>
+        <div class="graph__amount" id="amount_sat"></div>
+        <div class="graph__amount" id="amount_sun"></div>
+      </div>
       <div class="graph__columns graph__grid">
-        <div class="mon graph__bar"></div>
-        <div class="tue graph__bar"></div>
-        <div class="wed graph__bar"></div>
-        <div class="thu graph__bar"></div>
-        <div class="fri graph__bar"></div>
-        <div class="sat graph__bar"></div>
-        <div class="sun graph__bar"></div>
+        <div class="mon graph__bar" data-id="mon"></div>
+        <div class="tue graph__bar" data-id="tue"></div>
+        <div class="wed graph__bar" data-id="wed"></div>
+        <div class="thu graph__bar" data-id="thu"></div>
+        <div class="fri graph__bar" data-id="fri"></div>
+        <div class="sat graph__bar" data-id="sat"></div>
+        <div class="sun graph__bar" data-id="sun"></div>
       </div>
       <div class="graph__header graph__grid">
         <div class="">mon</div>
@@ -53,21 +62,17 @@
         <div class="">sat</div>
         <div class="">sun</div>
       </div>
-      <p></p>
-      <p></p>
-      <p></p>
-      <p></p>
-      <p></p>
-      <p></p>
-      <p></p>
     </div>
 
     <div class="total">
-      <p>Total this month</p>
-      <p><strong>$478.33</strong></p>
-
-      <p><strong>+2.4%</strong></p>
-      <p>from last month</p>
+      <div class="total__month">
+          <p>Total this month</p>
+          <p><strong>$478.33</strong></p>
+      </div>
+      <div class="total__month--last">
+          <p><strong>+2.4%</strong></p>
+          <p>from last month</p>
+      </div>
     </div>
   </section>
 
@@ -76,9 +81,17 @@
     Coded by <a href="#">Your Name Here</a>.
   </div>
   <script>
-    const addHeight = () => {
-
-    }
+    const bars = document.querySelectorAll('.graph__bar')
+    bars.forEach((bar) => {
+      bar.addEventListener('mouseover', (event) => {
+        const amount = document.getElementById(`amount_${event.currentTarget.dataset.id}`)
+        amount.classList.add('graph__amount--active')
+      })
+      bar.addEventListener('mouseleave', (event) => {
+        const amount = document.getElementById(`amount_${event.currentTarget.dataset.id}`)
+        amount.classList.remove('graph__amount--active')
+      })
+    })
     fetch("data.json")
         .then(response => response.json())
         .then((json) => {
@@ -88,6 +101,9 @@
 
           document.querySelector('.graph__columns').style.height = `${higherDay.amount * 3}px`
           json.forEach((day) => {
+
+            const amount = document.getElementById(`amount_${day.day}`)
+            amount.innerHTML = `<p>$${day.amount}</p>`
 
             bar = document.querySelector(`.${day.day}`)
             bar.style.height = `${(100 * day.amount) / higherDay.amount}%`
