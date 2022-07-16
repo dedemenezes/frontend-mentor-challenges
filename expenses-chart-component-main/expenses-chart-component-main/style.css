@@ -12,7 +12,7 @@ body {
   font-family: 'DM Sans', sans-serif;
   background-color: var(--cream);
   max-width: 375px;
-  margin: 40px auto;
+  margin: .5rem;
 }
 
 .balance {
@@ -95,6 +95,10 @@ body {
   margin-top: 0.75rem;
 }
 
+.graph__header p {
+  margin: 0;
+}
+
 .graph__bar {
   border-radius: .25rem;
   height: 36px;
@@ -108,6 +112,7 @@ body {
 }
 
 .graph__amount {
+  display: none;
   background-color: black;
   color: white;
   margin-bottom: 1rem;
@@ -167,8 +172,9 @@ body {
 @media (min-width: 1440px) {
   body {
     max-width: 550px;
+    margin: 40px auto;
   }
-  /* .graph__amount {
+  .graph__amount {
     display: block;
-  } */
+  }
 }
