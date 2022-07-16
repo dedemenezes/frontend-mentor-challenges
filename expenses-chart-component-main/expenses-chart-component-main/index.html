@@ -71,11 +71,11 @@
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="https://github.com/dedemenezes">Dede Menezes</a>.
   </div>
 
   <script>
-    
+
     const bars = document.querySelectorAll('.graph__bar')
     bars.forEach((bar) => {
       bar.addEventListener('mouseover', (event) => {
@@ -92,32 +92,39 @@
       graphHeader.insertAdjacentHTML('beforeend', `<p>${day}</p>`)
     }
 
+    function setBarsMaxHeight(data){
+      const higherDay = data.reduce((max, curren) => max.amount > curren.amount ? max : curren);
+      document.querySelector('.graph__columns').style.height = `${higherDay.amount * 3}px`
+      return higherDay;
+    }
+
+    function setDayAmount(day) {
+      const amount = document.getElementById(`amount_${day.day}`)
+      amount.innerHTML = `<p>$${day.amount}</p>`
+    }
+
+    const setBarStyle = (day, higherDay) => {
+      const bar = document.querySelector(`.${day.day}`);
+      bar.style.height = `${(100 * day.amount) / higherDay.amount}%`
+      if(day.amount >= 50) {
+        bar.style.backgroundColor = 'var(--cyan)'
+      }
+    }
+
     fetch("data.json")
-        .then(response => response.json())
-        .then((json) => {
+      .then(response => response.json())
+      .then((json) => {
+        const graphHeader = document.querySelector('.graph__header')
+        const days = json.map(e => e.day)
+        days.forEach(day => insertDay(day, graphHeader))
 
-          // inserir os dias
-          const graphHeader = document.querySelector('.graph__header')
-          const days = json.map(e => e.day)
-          days.forEach(day => insertDay(day, graphHeader))
+        const higherDay = setBarsMaxHeight(json)
 
-          console.log(json.sort(e => e.amount));
-
-          const higherDay = json.reduce((max, curren) => max.amount > curren.amount ? max : curren);
-
-          document.querySelector('.graph__columns').style.height = `${higherDay.amount * 3}px`
-          json.forEach((day) => {
-
-            const amount = document.getElementById(`amount_${day.day}`)
-            amount.innerHTML = `<p>$${day.amount}</p>`
-
-            bar = document.querySelector(`.${day.day}`)
-            bar.style.height = `${(100 * day.amount) / higherDay.amount}%`
-            if (day.amount >= 50) {
-              bar.style.backgroundColor = 'var(--cyan)'
-            }
-          })
-        });
+        json.forEach((day) => {
+          setDayAmount(day)
+          setBarStyle(day, higherDay)
+        })
+      });
 
   </script>
 </body>
