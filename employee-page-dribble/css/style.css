@@ -1,0 +1,47 @@
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+/* font-family: 'Montserrat', sans-serif; */
+/* font-family: 'Roboto', sans-serif; */
+
+/* COMPONENTS */
+@import url("components/avatar.css");
+@import url("components/button.css");
+@import url("components/container.css");
+@import url("components/navbar.css");
+
+/* BASIC STYLING */
+
+/* #90A0AF CINZA */
+/* #05CAAF VERDE */
+/* #8453DF ROXO */
+/* #FF70A8 ROSA */
+/* #FF987F LARANJA */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #F5F5F7;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(144, 144, 144);
+}
+
+a:hover {
+  text-decoration: none;
+  color: rgb(107, 107, 107);
+}
+
+.inline-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.inline-list li {
+  display: inline-block;
+}

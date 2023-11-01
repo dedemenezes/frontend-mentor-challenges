@@ -1,0 +1,36 @@
+.navbar {
+  height: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+}
+.navbar__menu--grow {
+  flex-grow: 1;
+}
+.navbar__menu {
+  height: 100%;
+}
+.navbar__menu > ul {
+  /* flex-grow: 1; */
+  margin: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar__menu li {
+  height: 100%;
+}
+
+a.nav__link {
+  margin: 0px 24px;
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+}
+
+a.nav__link:hover {
+  border-bottom: 2px solid #05CAAF;
+}
