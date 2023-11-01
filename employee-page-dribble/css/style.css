@@ -45,3 +45,7 @@ a:hover {
 .inline-list li {
   display: inline-block;
 }
+
+.height--full {
+  height: 100%;
+}

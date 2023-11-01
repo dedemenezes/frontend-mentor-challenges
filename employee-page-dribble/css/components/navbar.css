@@ -31,6 +31,6 @@ a.nav__link {
   height: 100%;
 }
 
-a.nav__link:hover {
+a.nav__link--bottom:hover {
   border-bottom: 2px solid #05CAAF;
 }
