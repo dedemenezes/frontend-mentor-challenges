@@ -1,0 +1,4 @@
+[submodule "advice-generator-app-chalenge/frontend-mentor-challenges"]
+	path = advice-generator-app-chalenge/frontend-mentor-challenges
+	url = git@github.com:dedemenezes/frontend-mentor-challenges.git
+	branch = gh-pages
